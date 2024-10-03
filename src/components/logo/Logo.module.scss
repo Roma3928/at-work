@@ -1,0 +1,16 @@
+@import '../../assets/scss/vars';
+
+.logo {
+  font-family: 'Inter', system-ui;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 19.5px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  p {
+    color: $color-purple;
+  }
+}
