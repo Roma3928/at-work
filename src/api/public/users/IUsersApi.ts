@@ -29,5 +29,5 @@ export interface IUsersData {
 }
 
 export interface IUsersApi {
-  getUsers(page: number): Promise<IUsersData[]>;
+  getUsers(): Promise<IUsersData[]>;
 }

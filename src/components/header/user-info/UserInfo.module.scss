@@ -1,3 +1,5 @@
+@import '../../../assets/scss/vars';
+
 .user-info {
   display: flex;
   align-items: center;
@@ -11,5 +13,19 @@
     flex-shrink: 0;
     border-radius: 50px;
     object-fit: cover;
+
+    @media (max-width: 768px) {
+      height: 28px;
+      width: 28px;
+    }
+  }
+
+  p {
+    color: $color-dark-gray;
+    line-height: 21.86px;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 }

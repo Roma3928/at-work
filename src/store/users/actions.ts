@@ -1,17 +1,20 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import api from '../../api';
+import { IUsersData } from '../../api/public/users/IUsersApi';
+import { AxiosError } from 'axios';
 
-export const fetchUsers = createAsyncThunk<any, any>(
+export const fetchUsers = createAsyncThunk<IUsersData[], void>(
   'users/fetchUsers',
-  async ({ page }, thunkApi) => {
+  async (_, thunkApi) => {
     try {
-      const users = await api.public.users.getUsers(page);
-      console.log(users);
-
-      return users;
+      return await api.public.users.getUsers();
     } catch (error) {
-      console.error(error);
-      return thunkApi.rejectWithValue(error);
+      console.log(error);
+      if (error instanceof AxiosError) {
+        return thunkApi.rejectWithValue(error.response?.data?.message || error.message);
+      } else {
+        return thunkApi.rejectWithValue('Unknown error occurred');
+      }
     }
   },
 );

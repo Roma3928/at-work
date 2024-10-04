@@ -7,7 +7,9 @@ const MainLayout: FC = () => {
   return (
     <div className={styles['main-layout']}>
       <Header />
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
     </div>
   );
 };

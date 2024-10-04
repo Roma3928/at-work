@@ -1,0 +1,14 @@
+@import '../../assets/scss/vars';
+
+.title {
+  font-weight: 600;
+  line-height: 32.78px;
+  margin-bottom: 16px;
+}
+
+.decor-line {
+  border: none;
+  color: $color-gray;
+  height: 1px;
+  background-color: $color-gray;
+}

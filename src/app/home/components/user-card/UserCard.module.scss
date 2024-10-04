@@ -1,0 +1,102 @@
+@import '../../../../assets/scss/vars';
+
+.user-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+  border-radius: 8px;
+  background-color: $color-white;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    gap: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 16px;
+  }
+
+  .avatar {
+    width: 112px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  .user-content {
+    position: relative;
+    flex-grow: 1;
+    height: 100%;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  .user-info {
+    max-width: 130px;
+    word-break: break-all;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+    @media (max-width: 1200px) {
+      max-width: 200px;
+    }
+
+    @media (max-width: 992px) {
+      max-width: 120px;
+    }
+
+    @media (max-width: 768px) {
+      max-width: 100px;
+    }
+  }
+
+  .user-name {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 27.32px;
+    color: $color-accent-blue;
+    margin-bottom: 4px;
+
+    @media (max-width: 992px) {
+      font-size: 18px;
+      line-height: 24.59px;
+    }
+  }
+
+  .company-name {
+    color: $color-dark-gray;
+
+    @media (max-width: 992px) {
+      font-size: 14px;
+      line-height: 19.12px;
+    }
+
+    @media (max-width: 768px) {
+      margin-bottom: 12px;
+    }
+  }
+
+  .location {
+    font-size: 14px;
+    color: $color-medium-gray;
+
+    @media (max-width: 992px) {
+      font-size: 12px;
+      line-height: 13.66px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 10px;
+    }
+  }
+}

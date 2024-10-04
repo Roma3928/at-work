@@ -2,12 +2,14 @@
 
 .header {
   background-color: $color-white;
+  margin-bottom: 40px;
 
   &-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 56px;
+    padding: 0 10px;
   }
 
   &-right-content {
@@ -19,5 +21,9 @@
   &-icon-box {
     display: flex;
     gap: 4px;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 }
