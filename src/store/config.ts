@@ -4,6 +4,7 @@ import * as usersActions from './users/actions';
 
 export const rootAction = {
   ...usersActions,
+  ...usersSlice.actions,
 };
 
 export const rootReducer = combineReducers({

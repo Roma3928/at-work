@@ -5,9 +5,9 @@ import Header from '../header';
 
 const MainLayout: FC = () => {
   return (
-    <div className={styles['main-layout']}>
+    <div className={styles.wrapper}>
       <Header />
-      <main>
+      <main className={styles.main}>
         <Outlet />
       </main>
     </div>

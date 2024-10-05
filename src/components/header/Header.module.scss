@@ -4,6 +4,10 @@
   background-color: $color-white;
   margin-bottom: 40px;
 
+  @media (max-width: 768px) {
+    margin-bottom: 32px;
+  }
+
   &-inner {
     display: flex;
     align-items: center;

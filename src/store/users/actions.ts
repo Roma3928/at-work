@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import api from '../../api';
-import { IUsersData } from '../../api/public/users/IUsersApi';
+import { IUsersResponse } from '../../api/public/users/IUsersApi';
 import { AxiosError } from 'axios';
 
-export const fetchUsers = createAsyncThunk<IUsersData[], void>(
+export const fetchUsers = createAsyncThunk<IUsersResponse[], void>(
   'users/fetchUsers',
   async (_, thunkApi) => {
     try {

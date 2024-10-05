@@ -17,7 +17,7 @@ interface ICompany {
   bs: string;
 }
 
-export interface IUsersData {
+export interface IUsersResponse {
   id: number;
   name: string;
   username: string;
@@ -29,5 +29,5 @@ export interface IUsersData {
 }
 
 export interface IUsersApi {
-  getUsers(): Promise<IUsersData[]>;
+  getUsers(): Promise<IUsersResponse[]>;
 }

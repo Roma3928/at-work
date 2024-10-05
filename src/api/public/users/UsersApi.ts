@@ -1,9 +1,9 @@
 import { apiBase } from '../apiBase';
-import { IUsersApi, IUsersData } from './IUsersApi';
+import { IUsersApi, IUsersResponse } from './IUsersApi';
 
 export class UsersApi implements IUsersApi {
-  async getUsers(): Promise<IUsersData[]> {
-    const response = await apiBase.get<IUsersData[]>('/users');
+  async getUsers(): Promise<IUsersResponse[]> {
+    const response = await apiBase.get<IUsersResponse[]>('/users');
 
     return response.data;
   }

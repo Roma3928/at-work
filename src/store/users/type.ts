@@ -1,7 +1,11 @@
-import { IUsersData } from '../../api/public/users/IUsersApi';
+import { IUsersResponse } from '../../api/public/users/IUsersApi';
 
+export interface IUserData extends IUsersResponse {
+  isArchived?: boolean;
+  isHidden?: boolean;
+}
 export interface IUsersInitalState {
-  users: IUsersData[];
+  users: IUserData[];
   isLoading: boolean;
   error: string;
 }

@@ -23,6 +23,9 @@
     object-fit: cover;
     border-radius: 8px;
 
+    &-archived {
+      filter: grayscale(100%);
+    }
     @media (max-width: 768px) {
       width: 100%;
     }
@@ -67,6 +70,10 @@
     color: $color-accent-blue;
     margin-bottom: 4px;
 
+    &-archived {
+      color: $color-dark-gray;
+    }
+
     @media (max-width: 992px) {
       font-size: 18px;
       line-height: 24.59px;
@@ -75,6 +82,10 @@
 
   .company-name {
     color: $color-dark-gray;
+
+    &-archived {
+      color: $color-medium-gray;
+    }
 
     @media (max-width: 992px) {
       font-size: 14px;
@@ -89,6 +100,10 @@
   .location {
     font-size: 14px;
     color: $color-medium-gray;
+
+    &-archived {
+      color: $color-gray;
+    }
 
     @media (max-width: 992px) {
       font-size: 12px;
