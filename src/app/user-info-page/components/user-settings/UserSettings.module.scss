@@ -44,6 +44,29 @@
       flex-direction: column;
     }
   }
+
+  &-modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+
+    h2 {
+      font-size: 600;
+      font-size: 20px;
+      line-height: 27.32px;
+      color: $color-dark-gray;
+
+      @media (max-width: 768px) {
+        font-size: 18px;
+        line-height: 24.59px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      gap: 16px;
+    }
+  }
 }
 
 .decor-line {

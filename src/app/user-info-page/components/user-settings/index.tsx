@@ -3,6 +3,8 @@ import styles from './UserSettings.module.scss';
 import Button from '../../../../components/ui/button';
 import Input from '../../../../components/ui/input';
 import { useActions } from '../../../../hooks/useActions';
+import Modal from '../../../../components/modal';
+import CheckedIcon from '../../../../assets/icon/CheckedIcon';
 
 interface IProps {
   name?: string;
@@ -21,7 +23,6 @@ const UserSettings: FC<IProps> = ({ name, userName, email, city, phone, companyN
   const [cityValue, setCityValue] = useState(city || '');
   const [phoneValue, setPhoneValue] = useState(phone || '');
   const [companyNameValue, setCompanyNameValue] = useState(companyName || '');
-
   const [errors, setErrors] = useState({
     name: '',
     userName: '',
@@ -30,6 +31,7 @@ const UserSettings: FC<IProps> = ({ name, userName, email, city, phone, companyN
     phone: '',
     companyName: '',
   });
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const validateFields = () => {
     const newErrors = {
@@ -62,6 +64,12 @@ const UserSettings: FC<IProps> = ({ name, userName, email, city, phone, companyN
         phone: phoneValue,
         company: { name: companyNameValue },
       });
+
+      setIsModalOpen(true);
+
+      setTimeout(() => {
+        setIsModalOpen(false);
+      }, 4000);
     }
   };
 
@@ -128,6 +136,13 @@ const UserSettings: FC<IProps> = ({ name, userName, email, city, phone, companyN
         </div>
         <Button>Сохранить</Button>
       </form>
+
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <div className={styles['user-settings-modal-content']}>
+          <CheckedIcon />
+          <h2>Изменения сохранены!</h2>
+        </div>
+      </Modal>
     </div>
   );
 };

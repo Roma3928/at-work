@@ -1,0 +1,35 @@
+@import '../../assets/scss/vars';
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(22, 22, 22, 0.24);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: $color-white;
+  padding: 40px;
+  border-radius: 16px;
+  position: relative;
+  max-width: 310px;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    padding: 32px;
+    max-width: 271px;
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: 17px;
+  right: 17px;
+  cursor: pointer;
+}
