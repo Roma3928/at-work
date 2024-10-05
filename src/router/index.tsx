@@ -1,4 +1,5 @@
 import Home from '../app/home';
+import UserInfoPage from '../app/user-info-page';
 import MainLayout from '../components/main-layout';
 
 export const routes = [
@@ -9,6 +10,10 @@ export const routes = [
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: 'user-info/:id',
+        element: <UserInfoPage />,
       },
       {
         path: '*',

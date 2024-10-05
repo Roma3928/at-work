@@ -7,4 +7,10 @@ export class UsersApi implements IUsersApi {
 
     return response.data;
   }
+
+  async getUserById(id: string): Promise<IUsersResponse> {
+    const response = await apiBase.get<IUsersResponse>(`/users/${id}`);
+
+    return response.data;
+  }
 }

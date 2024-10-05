@@ -1,0 +1,65 @@
+@import '../../../../assets/scss/vars';
+
+.profile-data {
+  background-color: $color-white;
+  border-radius: 16px;
+  padding: 40px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @media (max-width: 992px) {
+    padding: 28px;
+  }
+
+  @media (max-width: 768px) {
+    gap: 24px;
+  }
+}
+
+.profile-avatar {
+  width: 280px;
+  height: 485px;
+  border-radius: 8px;
+  object-fit: cover;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 187px;
+  }
+}
+
+.profile-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @media (max-width: 768px) {
+    gap: 20px;
+  }
+}
+
+.profile-category {
+  border-bottom: 1px solid $color-gray;
+  padding-bottom: 12px;
+  font-weight: 600;
+  line-height: 21.86px;
+  color: $color-medium-gray;
+  cursor: pointer;
+  transition: color 0.3s ease;
+
+  &-active {
+    color: $color-black;
+  }
+
+  &:hover {
+    color: $color-accent-blue;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    line-height: 19.12px;
+    padding-bottom: 8px;
+  }
+}

@@ -1,0 +1,53 @@
+@import '../../../assets/scss/vars';
+
+.input-container {
+  .label {
+    display: inline-block;
+    font-size: 18px;
+    line-height: 24.59px;
+    font-weight: 600;
+    margin-bottom: 10px;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+      line-height: 21.86px;
+    }
+  }
+
+  .input-wrapper {
+    position: relative;
+  }
+
+  input {
+    outline: none;
+    border-radius: 50px;
+    border: 2px;
+    padding: 10px 30px 10px 16px;
+    border: 2px solid $color-gray;
+    color: $color-dark-gray;
+    line-height: 21.86px;
+    width: 100%;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+      line-height: 19.12px;
+    }
+  }
+
+  .clear-button {
+    position: absolute;
+    top: 55%;
+    right: 8px;
+    transform: translateY(-50%);
+  }
+
+  .input-error {
+    border: 1px solid rgb(244, 0, 0);
+  }
+
+  .error {
+    color: rgb(244, 0, 0);
+    font-size: 14px;
+    line-height: 19.12px;
+  }
+}

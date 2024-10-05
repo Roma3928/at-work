@@ -3,11 +3,11 @@ import api from '../../api';
 import { IUsersResponse } from '../../api/public/users/IUsersApi';
 import { AxiosError } from 'axios';
 
-export const fetchUsers = createAsyncThunk<IUsersResponse[], void>(
-  'users/fetchUsers',
-  async (_, thunkApi) => {
+export const fetchUserById = createAsyncThunk<IUsersResponse, { id: string }>(
+  'userInfo/fetchUser',
+  async ({ id }, thunkApi) => {
     try {
-      return await api.public.users.getUsers();
+      return await api.public.users.getUserById(id);
     } catch (error) {
       console.log(error);
 
