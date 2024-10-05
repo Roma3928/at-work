@@ -1,4 +1,4 @@
-import { FC, FormEvent, useState } from 'react';
+import { FC, FormEvent, useRef, useState } from 'react';
 import styles from './UserSettings.module.scss';
 import Button from '../../../../components/ui/button';
 import Input from '../../../../components/ui/input';
@@ -32,6 +32,7 @@ const UserSettings: FC<IProps> = ({ name, userName, email, city, phone, companyN
     companyName: '',
   });
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const closeModalTimer = useRef<NodeJS.Timeout | null>(null);
 
   const validateFields = () => {
     const newErrors = {
@@ -67,10 +68,22 @@ const UserSettings: FC<IProps> = ({ name, userName, email, city, phone, companyN
 
       setIsModalOpen(true);
 
-      setTimeout(() => {
+      if (closeModalTimer.current) {
+        clearTimeout(closeModalTimer.current);
+      }
+
+      closeModalTimer.current = setTimeout(() => {
         setIsModalOpen(false);
       }, 4000);
     }
+  };
+
+  const handleCloseModal = () => {
+    if (closeModalTimer.current) {
+      clearTimeout(closeModalTimer.current);
+    }
+
+    setIsModalOpen(false);
   };
 
   return (
@@ -137,7 +150,7 @@ const UserSettings: FC<IProps> = ({ name, userName, email, city, phone, companyN
         <Button>Сохранить</Button>
       </form>
 
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+      <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
         <div className={styles['user-settings-modal-content']}>
           <CheckedIcon />
           <h2>Изменения сохранены!</h2>
